@@ -1,7 +1,6 @@
 import json
 import re
 import time
-import urllib.parse
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
@@ -30,6 +29,7 @@ class LinkParser(HTMLParser):
         self.text.append(data)
 
 def fetch(url):
+    print(f"FETCH {url}", flush=True)
     req = urllib.request.Request(url, headers={"User-Agent": "cloude-experiment-engine/1.0"})
     with urllib.request.urlopen(req, timeout=15) as r:
         return r.read().decode("utf-8", "ignore"), r.geturl()
@@ -51,7 +51,10 @@ def rejected(text):
     return [k for k, words in checks.items() if any(w in lower for w in words)]
 
 def main():
+    print("ENGINE START", flush=True)
     state = json.loads(STATE_PATH.read_text()) if STATE_PATH.exists() else {"cycle": 0, "seen": []}
+    cycle = state["cycle"] + 1
+    print(f"CYCLE {cycle}", flush=True)
     findings = []
     for seed in SEEDS:
         try:
@@ -61,16 +64,20 @@ def main():
             text = " ".join(parser.text)
             flags = rejected(text)
             if flags:
+                print(f"REJECT {final_url} {','.join(flags)}", flush=True)
                 continue
-            findings.append({"url": final_url, "score": score(final_url, text), "title_terms": re.findall(r"[A-Za-z][A-Za-z -]{2,40}", text)[:20]})
+            item = {"url": final_url, "score": score(final_url, text), "title_terms": re.findall(r"[A-Za-z][A-Za-z -]{2,40}", text)[:20]}
+            findings.append(item)
+            print(f"ACCEPT {final_url} score={item['score']}", flush=True)
             time.sleep(1)
-        except Exception:
-            continue
+        except Exception as exc:
+            print(f"ERROR {seed} {type(exc).__name__}: {exc}", flush=True)
     findings.sort(key=lambda x: x["score"], reverse=True)
-    state["cycle"] += 1
+    state["cycle"] = cycle
     state["seen"] = list(dict.fromkeys(state.get("seen", []) + [x["url"] for x in findings]))[-200:]
     RESULT_PATH.write_text(json.dumps({"cycle": state["cycle"], "findings": findings[:10], "rules": RULES}, indent=2))
     STATE_PATH.write_text(json.dumps(state, indent=2))
+    print(f"ENGINE COMPLETE findings={len(findings)}", flush=True)
 
 if __name__ == "__main__":
     main()
