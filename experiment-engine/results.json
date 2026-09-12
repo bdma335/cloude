@@ -1,0 +1,105 @@
+{
+  "cycle": 1,
+  "findings": [
+    {
+      "url": "https://github.com/topics/free-online-tools",
+      "score": 7,
+      "title_terms": [
+        "imports",
+        "react",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-e",
+        "react-dom",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-dom-e",
+        "react-dom",
+        "client",
+        "https",
+        "github",
+        "githubassets"
+      ]
+    },
+    {
+      "url": "https://github.com/topics/web-tools",
+      "score": 6,
+      "title_terms": [
+        "imports",
+        "react",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-e",
+        "react-dom",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-dom-e",
+        "react-dom",
+        "client",
+        "https",
+        "github",
+        "githubassets"
+      ]
+    },
+    {
+      "url": "https://github.com/topics/browser-tools",
+      "score": 6,
+      "title_terms": [
+        "imports",
+        "react",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-e",
+        "react-dom",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-dom-e",
+        "react-dom",
+        "client",
+        "https",
+        "github",
+        "githubassets"
+      ]
+    }
+  ],
+  "rules": {
+    "objective": "discover legitimate zero-investment online earning experiments",
+    "hard_reject": {
+      "kyc": true,
+      "identity_check": true,
+      "account_required": true,
+      "account_sharing": true,
+      "captcha_bypass": true,
+      "spam": true,
+      "fraud": true,
+      "unauthorized_access": true,
+      "platform_rule_violation": true,
+      "ongoing_human_action": true
+    },
+    "human_escalation_threshold_usd": 10000,
+    "capital_limit_usd": 0,
+    "selection": {
+      "prefer": "legal_public_web_opportunities",
+      "maximize": "expected_revenue_per_unit_effort",
+      "penalize": "setup_dependency_risk"
+    }
+  }
+}
