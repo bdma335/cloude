@@ -8,6 +8,9 @@ on:
     - cron: "17 */6 * * *"
 permissions:
   contents: write
+concurrency:
+  group: autonomous-experiment-main
+  cancel-in-progress: false
 jobs:
   run:
     if: github.event_name != 'push' || !contains(github.event.head_commit.message, 'Update experiment results')
@@ -23,4 +26,6 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add experiment-engine/state.json experiment-engine/results.json
           git diff --cached --quiet || git commit -m "Update experiment results"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
