@@ -1,5 +1,5 @@
 {
-  "cycle": 50,
+  "cycle": 51,
   "findings": [
     {
       "url": "https://github.com/topics/free-online-tools",
@@ -28,8 +28,8 @@
       ]
     },
     {
-      "url": "https://github.com/topics/web-tools",
-      "score": 6,
+      "url": "https://github.com/topics/browser-tools",
+      "score": 7,
       "title_terms": [
         "imports",
         "react",
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "url": "https://github.com/topics/browser-tools",
+      "url": "https://github.com/topics/web-tools",
       "score": 6,
       "title_terms": [
         "imports",
