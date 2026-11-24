@@ -1,6 +1,85 @@
 {
-  "cycle": 226,
-  "findings": [],
+  "cycle": 227,
+  "findings": [
+    {
+      "url": "https://github.com/topics/free-online-tools",
+      "score": 7,
+      "title_terms": [
+        "imports",
+        "react",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-fa",
+        "ecc",
+        "react-dom",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-dom-c",
+        "react-dom",
+        "client",
+        "https",
+        "github"
+      ]
+    },
+    {
+      "url": "https://github.com/topics/browser-tools",
+      "score": 7,
+      "title_terms": [
+        "imports",
+        "react",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-fa",
+        "ecc",
+        "react-dom",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-dom-c",
+        "react-dom",
+        "client",
+        "https",
+        "github"
+      ]
+    },
+    {
+      "url": "https://github.com/topics/web-tools",
+      "score": 6,
+      "title_terms": [
+        "imports",
+        "react",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-fa",
+        "ecc",
+        "react-dom",
+        "https",
+        "github",
+        "githubassets",
+        "com",
+        "assets",
+        "react-dom-c",
+        "react-dom",
+        "client",
+        "https",
+        "github"
+      ]
+    }
+  ],
   "rules": {
     "objective": "discover legitimate zero-investment online earning experiments",
     "hard_reject": {
